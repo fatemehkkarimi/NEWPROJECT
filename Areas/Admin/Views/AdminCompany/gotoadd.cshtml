@@ -1,0 +1,31 @@
+@model newproject.Models.Models.Vm_Company;
+ <div class="container-fluid">
+     <form action= "/admin/admincompany/add" method="Post" enctype="multipart/form-data">
+         <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label for="password_2">عنوان شرکت را وارد نمایید</label>
+       </div>
+           <div class="col-lg-10 col-md-10 col-sm-8">
+               <div class="form-group">
+                   <input type="text" asp-for="Vm_Title" required>
+               </div>
+            </div>  
+         </div>   
+         <br>
+          <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label for="password_2">عکس شرکت را وارد نمایید</label>
+       </div>
+           <div class="col-lg-10 col-md-10 col-sm-8">
+               <div class="form-group">
+                   <input type="file" accept="image/*" required asp-for="Vm_Img">
+               </div>
+            </div>  
+         </div>   
+         <br>
+         <div class="text-left">    
+             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect m-l-20">افزودن شرکت</button>
+         </div>    
+       
+     </form>
+ </div>

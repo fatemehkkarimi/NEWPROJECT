@@ -1,0 +1,44 @@
+@model newproject.Models.Models.Vm_Header;
+ <div class="container-fluid">
+     <form action= "/admin/adminheader/update" method="Post" enctype="multipart/form-data">
+         <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label for="password_2">عنوان سربرگ را وارد نمایید</label>
+       </div>
+           <div class="col-lg-10 col-md-10 col-sm-8">
+               <div class="form-group">
+                   <input type="text" asp-for="Vm_Title" required>
+               </div>
+            </div>  
+         </div>   
+         <br>
+          <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label for="password_2">جزییات سربرگ را وارد نمایید</label>
+       </div>
+           <div class="col-lg-10 col-md-10 col-sm-8">
+               <div class="form-group">
+                   <input type="text" asp-for="Vm_Detail" required>
+               </div>
+            </div>  
+         </div>   
+         <br>
+           <input type="text" asp-for="Vm_Id" hidden>
+           <img src="/fileupload/@Model.Vm_Image" with= 20%>
+          <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label for="password_2">عکس سربرگ را وارد نمایید</label>
+       </div>
+           <div class="col-lg-10 col-md-10 col-sm-8">
+               <div class="form-group">
+                   <input type="file" accept="image/*" asp-for="Img">
+               </div>
+            </div>  
+         </div>   
+         <br>
+         <div class="text-left">    
+             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect m-l-20">ویرایش</button>
+         </div>    
+       
+     </form>
+ </div>

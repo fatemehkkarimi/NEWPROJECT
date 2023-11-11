@@ -1,0 +1,72 @@
+ <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">جدول ها</h1>
+                    <a class="btn btn-sm btn-succes m-3" href="/admin/AdminAboutUsItem/gotoadd">افزودن جدید</a>
+                    @if(ViewBag.Message != null)
+                    { 
+                      <p class="mb-4 alert alert-info text-center">@ViewBag.Message</p>
+                    }
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">جدول ها</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>عنوان</th>
+                                            <th>توضیحات</th>
+                                            <th>ایکون</th>
+                                             <th>وضعیت</th>
+                                            <th>عملیات</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>عنوان</th>
+                                            <th>توضیحات</th>
+                                            <th>ایکون</th>
+                                             <th>وضعیت</th>
+                                            <th>عملیات</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    @if( ViewBag.AboutUsItem != null)
+                                    {
+                                        foreach(var item in  ViewBag.AboutUsItem)
+                                        {
+                                        <tr>
+                                            <td>@item.Title</td>
+                                            <td>@item.Detail</td>
+                                            <td>@item.Icon</td>
+                                            <td>@item.Number</td>
+                                             <td>
+                                             @if(@item.Status == true)
+                                             {
+                                                <p class="alert alert-succes text-center">فعال</p>
+                                             }else
+                                             {
+                                                <p class="alert alert-danger text-center">غیر فعال</p>
+                                             }
+                                             </td>
+                                             <td>
+                                             <a class= "btn btn-sm btn-warning" href="/admin/AdminAboutUsItem/gotoupdate/@item.Id">ویرایش</a>
+                                             <a class= "btn btn-sm btn-danger" href="/admin/AdminAboutUsItem/gotodelet/@item.Id">حذف کردن</a>
+                                             <a class= "btn btn-sm btn-info" href="/admin/AdminAboutUsItem/gotostatus/@item.Id">تغییر وضعیت</a>
+                                             </td>
+                                        </tr>
+                                        }
+                                    }
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->

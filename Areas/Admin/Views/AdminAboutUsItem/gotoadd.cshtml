@@ -1,0 +1,46 @@
+@model newproject.Models.Models.Vm_AboutUSItem;
+ <div class="container-fluid">
+     <form action= "/admin/AdminAboutUsItem/add" method="Post">
+         <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label for="password_2">توضیحات را وارد نمایید</label>
+       </div>
+           <div class="col-lg-10 col-md-10 col-sm-8">
+               <div class="form-group">
+                   <input type="text" asp-for="Vm_Detail" required>
+               </div>
+            </div>  
+         </div>   
+         <br>
+         <div class="row clearfix">
+          <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+            <label for="password_2">ایکون را وارد نمایید</label>
+             </div>
+           <div class="col-lg-10 col-md-10 col-sm-8">
+               <div class="form-group">
+                   <input type="text" asp-for="Vm_Icon" required>
+               </div>
+            </div>  
+         </div>   
+         <br>
+         <div class="row clearfix">
+          <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+            <label for="password_2">شماره معرفی را انتخاب نمایید</label>
+             </div>
+           <div class="col-lg-10 col-md-10 col-sm-8">
+               <div class="form-group">
+                  <select asp-for="Vm_Number">
+                    <option value="1">شماره یک</option>
+                    <option value="2">شماره دو</option>
+                    <option value="3">شماره سه3</option>
+                    <option value="4">شماره چهار</option>
+                  </select>
+               </div>
+            </div>  
+         </div>   
+         <div class="text-left">    
+             <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect m-l-20">افزودن </button>
+         </div>    
+       
+     </form>
+ </div>

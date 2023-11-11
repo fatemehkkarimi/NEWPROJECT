@@ -1,0 +1,62 @@
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">جدول سربرگ</h1>
+                    @if(ViewBag.Message != null)
+                    { 
+                      <p class="mb-4 alert alert-warning">@ViewBag.Message</p>
+                    }
+                    
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">جدول سربرگ</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>عنوان</th>
+                                            <th>توضیحات</th>
+                                            <th>عکس</th>
+                                            <th>عملیات</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                             <th>عنوان</th>
+                                            <th>توضیحات</th>
+                                            <th>عکس</th>
+                                            <th>عملیات</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    @if( ViewBag.Find != null)
+                                    {
+                                        foreach(var item in  ViewBag.Find)
+                                        {
+                                        <tr>
+                                            <td>@item.Title</td>
+                                            <td>@item.Detail</td>
+                                            <td>
+                                                <img src="/fileupload/@item.Image"style="width:50px;">
+                                            </td>
+                                             <td>
+                                             <a class= "btn btn-sm btn-warning" href="/admin/adminheader/GoToUpdate/@item.Id">ویرایش</a>
+                                             </td>
+                                        </tr>
+                                        }
+                                    }
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
